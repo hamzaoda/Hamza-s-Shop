@@ -21,6 +21,10 @@ app.use(cors({
     origin: ["https://hamza-s-shop-production.up.railway.app"],
     credentials: true
 }));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://hamza-s-shop-production.up.railway.app');
+  next();
+});
 
 app.use(fileUpload({
     useTempFiles : true,
